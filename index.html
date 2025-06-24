@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kirubalan | GitHub-Style Portfolio</title>
+  <link rel="stylesheet" href="https://unpkg.com/@primer/css@^20.0.0/dist/primer.css">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .Header {
+      background-color: #161b22;
+      padding: 1rem 0;
+      border-bottom: 1px solid #21262d;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 10px 50px rgb(61, 230, 230);
+      margin-bottom: 40px;
+    }
+
+    .Header-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0;
+      animation: fadeInDown 1s ease;
+    }
+
+    .Header-nav {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .Header-nav a{
+      text-decoration: none;
+    }
+    .Header-link {
+      margin-right: 1rem;
+      color: #c9d1d9;
+      font-weight: 500;
+      position: relative;
+      text-shadow: 1px 2px 10px rgb(42, 170, 221);
+     
+      
+      
+    }
+
+    @media screen and (min-width:993px){
+      
+    .Header-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 100%;
+      height: 2px;
+      background-color: #58a6ff;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .Header-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+      
+      
+    }
+
+  }
+  .container{
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .container-lg {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    @media screen and (max-width:768px){
+      
+    
+    .container-lg a{
+      border: 1px solid rgb(0, 140, 255);
+      padding: 7px 16px 7px 16px;
+      border-radius: 50px;
+      
+    }
+  }
+    main {
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      color: #58a6ff;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background-color: #161b22;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      border: 1px solid #21262d;
+      box-shadow: 0 4px 15px rgba(88, 166, 255, 0.1);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(88, 166, 255, 0.3);
+    }
+
+    .card ul{
+      padding-left: 70px;
+    }
+
+    @media screen and (max-width:768px){
+      .card ul{
+      padding-left: 0px;
+    }
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #161b22;
+      color: #8b949e;
+      border-top: 1px solid #21262d;
+    }
+
+    .glow {
+      animation: glow 2s infinite alternate;
+    }
+
+    .profile-pic {
+      max-width: 150px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 40px #4de7ec;
+    }
+
+    @media screen and (max-width: 768px) {
+    .profile-pic{
+    display: flex;
+    
+    
+  }
+}
+
+    .cert-img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      box-shadow: 0 0 15px rgba(88, 166, 255, 0.2);
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #58a6ff; }
+      to { text-shadow: 0 0 20px #58a6ff; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #007bff, #6610f2);
+      padding: 10px 20px;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 0 10px #007bff;
+      transition: 0.3s;
+      
+    }
+    .btn-primary:hover {
+      box-shadow: 0 0 20px #6610f2;
+      text-decoration: none;
+
+    }
+
+    .rp{
+      margin: 30px;
+      display: none;
+    }
+    @media screen and (max-width:768px){
+      
+      .rp{
+      display: flex;
+      padding: 10px;
+
+    }
+    }
+
+
+    #typed{
+      color: yellow;
+    }
+    .prof{
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    @media screen and (max-width: 768px) {
+  .prof{
+    display: block;
+    
+  }
+}
+    @media screen and (max-width: 768px) {
+  .prof p{
+    display: block;
+    align-items: flex-end;
+  }
+}
+
+    .prof p{
+      padding-left: 70px ;
+      text-align: justify;
+    }
+
+    @media screen and (max-width: 768px) {
+  .prof p{
+   display: none;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header class="Header">
+    <div class="container-lg">
+      <h1 class="Header-title glow">KIRUBALAN V</h1>
+      <nav class="Header-nav">
+        <a href="#about" class="Header-link">About</a>
+        <a href="#projects" class="Header-link">Projects</a>
+        <a href="#certificates" class="Header-link">Certificates</a>
+        <a href="#skills" class="Header-link">Skills</a>
+        <a href="#resume" class="Header-link">Resume</a>
+        <a href="#contact" class="Header-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2 style="margin: 20px;">About Me</h2>
+      <div class="prof">
+      <img src="kiruba.jpeg" alt="My Photo" class="profile-pic">
+      
+      <p>I'm currently pursuing my BCA at St. Joseph College, and have hands-on experience building websites, managing databases, and creating engaging tech videos on YouTube.
+
+I specialize in HTML, CSS, JavaScript, PHP, and Python, and love experimenting with tools like GitHub, MySQL, and Kali Linux. Whether it's designing a clean portfolio, creating a student management system, or scripting ethical hacks in Termux, I'm always eager to learn and build.
+
+Outside of coding, I enjoy editing videos, exploring the latest in cyber defense, and helping others kickstart their tech journey through tutorials and walkthroughs.</p>
+    </div>
+      <div class="typp">
+      <h4>i'm <span id="typed"></span></h4>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          var typed = new Typed("#typed", {
+            strings: ["Tech Enthusiast_", "Web Developer_", "YouTuber_", "Cybersecurity Learner_", "Content Creator_"],
+            typeSpeed: 70,
+            backSpeed: 30,
+            loop: true
+          });
+        });
+      </script>
+      
+      </div>
+    </section>
+
+    <a href="https://www.youtube.com/channel/UCNxGXFHcLt91Tw8maux8yQg" target="_blank" 
+   style="position:fixed;bottom:20px;right:20px;background:red;color:white;
+          padding:10px 15px;border-radius:50px;text-decoration:none;
+          font-weight:bold;box-shadow:0 0 10px rgba(255,0,0,0.5);z-index:1000;">
+   🔴 Subscribe</a>
+  
+  
+    <section id="projects">
+      <h2 style="padding: 10px;">Projects</h2>
+  <div class="card">
+    <h3>Personal Portfolio</h3>
+    <p>A sleek, GitHub-style personal portfolio built using <strong>HTML, CSS</strong>, and <strong>Primer CSS framework</strong>.</p>
+    <ul>
+      <li>⚓ Smooth scroll navigation with anchor links</li>
+      <li>🧑‍🎨 Custom animations (e.g., glowing header, hover cards)</li>
+      <li>📱 Responsive layout using Flexbox and Grid</li>
+      <li>📁 Sections: About, Projects, Certificates, Skills, Resume, Contact</li>
+      <li>📂 Organized folder structure</li>
+    </ul>
+   
+    <p><strong>Technologies:</strong> HTML, CSS, Primer.css, Typed.js</p>
+  </div>
+    </section>
+
+    
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="card">
+        <p><strong>Languages:</strong> <span title="Used for scripting and automation">Python 🐍</span>, Java, HTML, CSS, JavaScript, PHP, SQL</p>
+        <p><strong>Tools:</strong> VS Code, GitHub, MySQL, Excel, MS Office</p>
+        <p><strong>Extras:</strong> Photo & Video Editing, Basic Hacking, Linux (Kali, Termux)</p>
+        <p>
+          <img src="https://img.shields.io/badge/HTML-Expert-orange?logo=html5" class="badge">
+          <img src="https://img.shields.io/badge/CSS-Stylish-blue?logo=css3" class="badge">
+          <img src="https://img.shields.io/badge/JavaScript-Fun-yellow?logo=javascript" class="badge">
+        </p>
+      </div>
+    </section>
+
+    <section id="resume">
+ <h2>Resume</h2>
+  <div class="card">
+  
+    <a href="resume/myresume1.pdf" class="btn-primary" download>📄 Download Resume</a>
+    <div class="rv">
+    <p class="rp">I'm currently pursuing my BCA at St. Joseph College, and have hands-on experience building websites, managing databases, and creating engaging tech videos on YouTube.
+
+      I specialize in HTML, CSS, JavaScript, PHP, and Python, and love experimenting with tools like GitHub, MySQL, and Kali Linux. Whether it's designing a clean portfolio, creating a student management system, or scripting ethical hacks in Termux, I'm always eager to learn and build.
+      
+      Outside of coding, I enjoy editing videos, exploring the latest in cyber defense, and helping others kickstart their tech journey through tutorials and walkthroughs.</p>
+    </div>
+     
+    
+    </div>
+    </section>
+
+    <section id="certificates">
+      <h2>Certificates</h2>
+    
+    
+      <div class="card">
+        <h3>PMI® Certificate</h3>
+        <p>Issued by Project Management Institute® — a recognized industry credential.</p>
+        <img src="certificates/Project Management Institute (PMI)®/Project Management Institute (PMI)®-1.png" alt="PMI Certificate" class="cert-img">
+      </div>
+
+      <div class="card">
+        <h3>Soft Skills - TCS iON</h3>
+        <p>Completed soft skills training under TCS iON Digital Learning Hub.</p>
+        <img src="certificates/KIRUBALAN_V_4625810/KIRUBALAN_V_4625810-1.png" alt="TCS iON Certificate" class="cert-img">
+      </div>
+    
+      <div class="card">
+        <h3>PMI® Certificate (1)</h3>
+        <p>Additional training or specialization from PMI®.</p>
+        <img src="certificates/Project Management Institute (PMI)®(1)/Project Management Institute (PMI)®(1)-1.png" alt="PMI Certificate 2" class="cert-img">
+      </div>
+    
+      <div class="card">
+        <h3>NASBA Certificate</h3>
+        <p>Issued by National Association of State Boards of Accountancy.</p>
+        <img src="certificates/National Association of State Boards of Accountancy (NASBA)/National Association of State Boards of Accountancy (NASBA)-1.png" alt="NASBA Certificate" class="cert-img">
+      </div>
+    
+      <div class="card">
+        <h3>NASBA Certificate (1)</h3>
+        <p>Another certificate from NASBA, likely a follow-up or specialization.</p>
+        <img src="certificates/National Association of State Boards of Accountancy (NASBA)(1)/National Association of State Boards of Accountancy (NASBA)(1)-1.png" alt="NASBA Certificate 2" class="cert-img">
+      </div>
+    
+      <div class="card">
+        <h3>LinkedIn Learning Certificate</h3>
+        <p>Skill-based certification from LinkedIn Learning.</p>
+        <img src="certificates/LinkedIn Learning Certificate/LinkedIn Learning Certificate-1.png" alt="LinkedIn Certificate" class="cert-img">
+      </div>
+    
+      <div class="card">
+        <h3>LinkedIn Learning Certificate (1)</h3>
+        <p>Advanced technical skill certification.</p>
+        <img src="certificates/LinkedIn Learning Certificate(1)/LinkedIn Learning Certificate(1)-1.png" alt="LinkedIn Certificate 1" class="cert-img">
+      </div>
+    
+      <div class="card">
+        <h3>LinkedIn Learning Certificate (2)</h3>
+        <p>Course completed on emerging technologies.</p>
+        <img src="certificates/LinkedIn Learning Certificate(2)/LinkedIn Learning Certificate(2)-1.png" alt="LinkedIn Certificate 2" class="cert-img">
+      </div>
+    
+      <div class="card">
+        <h3>LinkedIn Learning Certificate (3)</h3>
+        <p>Professional development and personal branding course.</p>
+        <img src="certificates/LinkedIn Learning Certificate(3)/LinkedIn Learning Certificate(3)-1.png" alt="LinkedIn Certificate 3" class="cert-img">
+      </div>
+    
+      <div class="card">
+        <h3>Java Certificate</h3>
+        <p>Certificate of Completion in Java Programming.</p>
+        <img src="certificates/Java_Certificate/Java_Certificate-1.png" alt="Java Certificate" class="cert-img">
+      </div>
+    
+ 
+    
+      
+    
+      <div class="card">
+        <h3>Certification (Email ID based)</h3>
+        <p>General tech-related certification associated with email: kirubalan220@gmail.com.</p>
+        <img src="certificates/Kirubalan220-kirubalan220@gmail.com-8674093 (1)/Kirubalan220-kirubalan220@gmail.com-8674093 (1)-1.png" alt="Email-based Certificate" class="cert-img">
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:kirubalan220@gmail.com">kirubalan220@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQFnU5sTDzsI-gAAAZYadr9ATQKebQ3S53D9xLdRPuNpZ3ax132_Bbb3gKbZAuZXAw1SEyh-uTL_iqFrQD29V6J6JE16OsHoE2COKmMK4zTb4_kRRr9nUBIydfhd6kmuQfC55OA=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fkirubalan-v-447657318%3Futm_source%3Dshare%26utm_campaign%3Dshare_via%26utm_content%3Dprofile%26utm_medium%3Dandroid_app" target="_blank">Kirubalan V</a></p>
+      <p>YouTube: <a href="https://www.youtube.com/@kiruba220" target="_blank">🎥 @kiruba220</a></p>
+    </section>
+
+    
+  </main>
+
+  <footer>
+    &copy; 2025 Kirubalan. All rights reserved.
+  </footer>
+</body>
+</html>
